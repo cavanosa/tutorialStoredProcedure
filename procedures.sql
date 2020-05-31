@@ -1,3 +1,7 @@
+#CREAR BASE DE DATOS
+
+CREATE DATABASE IF NOT EXISTS tutorial_procedure CHARACTER SET utf8 COLLATE utf8_general_ci;
+
 # LISTA DE COCHES
 
 DELIMITER $$
@@ -34,7 +38,7 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `borrar_procedure`(IN `idIn` INT(11))
-    READS SQL DATA
+    MODIFIES SQL DATA
 DELETE FROM coche WHERE id = idIn$$
 DELIMITER ;
 
